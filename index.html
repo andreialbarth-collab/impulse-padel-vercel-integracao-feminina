@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>Impulse Padel BVB — Torneio</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1220;--panel:#111c2e;--line:#28364b;--text:#edf3fc;--muted:#a5b4c8;--green:#42c98a;--orange:#ff9b45;--blue:#477cf5}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(140deg,#0b1220,#101a2c);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1100px;margin:auto;padding:24px 16px 60px}.hero{padding:26px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(120deg,#16253b,#111a2a);margin-bottom:18px}.eyebrow{font-size:12px;letter-spacing:.12em;color:var(--green);font-weight:800}.hero h1{font-size:clamp(28px,5vw,42px);line-height:1.1;margin:8px 0}.muted{color:var(--muted);font-size:13px}.stats,.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.cols{grid-template-columns:repeat(2,minmax(0,1fr))}.stat,.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:16px;margin-bottom:14px}.stat strong{display:block;font-size:26px}.stat span{font-size:12px;color:var(--muted)}h2{font-size:20px;margin:0 0 5px}h3{font-size:15px;margin:0 0 10px}.section-head{display:flex;justify-content:space-between;align-items:start;gap:12px;flex-wrap:wrap;margin-bottom:14px}label{font-weight:700;font-size:13px;display:block;margin-bottom:7px}textarea,input,select{font:inherit;color:var(--text);background:#0b1423;border:1px solid #34435a;border-radius:9px;padding:10px;width:100%}textarea{resize:vertical;min-height:190px}.buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}button{font:inherit;font-weight:750;border:1px solid #35445b;border-radius:9px;background:#1a2940;color:var(--text);padding:10px 14px;cursor:pointer}button:hover{filter:brightness(1.15)}button:disabled{opacity:.4;cursor:not-allowed}.primary{background:var(--blue);border-color:var(--blue);color:white}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}.tabs button.active{border-color:var(--blue);background:#1c3767}.pill{display:inline-block;padding:4px 8px;border-radius:7px;background:#202d42;font-size:12px;font-weight:800}.green{color:var(--green)}.orange{color:var(--orange)}.match{border:1px solid var(--line);border-radius:13px;padding:14px;margin-top:10px;background:#0e1929}.match-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.versus{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:center;margin-top:12px}.team{font-size:14px;font-weight:750}.team:last-child{text-align:right}.scores{display:flex;gap:6px;align-items:center}.score{width:58px;text-align:center;font-size:20px;font-weight:800;padding:8px 2px}.notice{padding:12px;border-radius:10px;background:#0b1423;border:1px solid var(--line);font-size:13px;color:var(--muted);margin-top:12px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--muted);font-weight:700}.court-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.court{border-left:4px solid var(--green);padding:12px;background:#0e1929;border-radius:8px}.court.cresol{border-left-color:var(--orange)}.hidden{display:none!important}.error{color:#ff9d9d;font-size:13px;margin-top:8px}.success{color:var(--green);font-size:13px;margin-top:8px}footer{color:var(--muted);font-size:12px;text-align:center;margin-top:25px}
+@media(max-width:650px){main{padding:12px 10px 40px}.hero{padding:20px}.stats{gap:7px}.stat{padding:10px}.stat strong{font-size:22px}.cols{grid-template-columns:1fr}.versus{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:5px}.team{font-size:12px}.score{width:43px;font-size:17px}.match{padding:10px}}
+</style>
+</head>
+<body><main>
+<header class="hero"><div class="eyebrow">IMPULSE PADEL BVB · TORNEIO</div><h1>Painel do torneio</h1><div class="muted">16 jogadores · 5 rodadas · 20 partidas · início previsto às 14h</div>
+<div class="stats" style="margin-top:20px"><div class="stat"><span>Rodada gerada</span><strong id="statRound">0/5</strong></div><div class="stat"><span>Jogos gerados</span><strong id="statGames">0/20</strong></div><div class="stat"><span>Resultados lançados</span><strong id="statDone">0/20</strong></div></div></header>
+<section class="card"><div class="section-head"><div><h2>1. Jogadores</h2><div class="muted">Informe 8 jogadores de cada lado, um nome por linha. Os nomes precisam ser únicos.</div></div><span class="pill">16 participantes</span></div>
+<div class="cols"><div><label for="rightNames">Direitas — 8 jogadores</label><textarea id="rightNames">Direita 1
+Direita 2
+Direita 3
+Direita 4
+Direita 5
+Direita 6
+Direita 7
+Direita 8</textarea></div><div><label for="leftNames">Esquerdas — 8 jogadores</label><textarea id="leftNames">Esquerda 1
+Esquerda 2
+Esquerda 3
+Esquerda 4
+Esquerda 5
+Esquerda 6
+Esquerda 7
+Esquerda 8</textarea></div></div>
+<div class="buttons"><button id="startBtn" class="primary">Iniciar e sortear 1ª rodada</button><button id="resetBtn">Reiniciar torneio</button></div><div id="setupMsg" class="muted" style="margin-top:8px">O sorteio será feito após iniciar o torneio.</div></section>
+<section class="card"><div class="section-head"><div><h2>2. Rodadas e placares</h2><div class="muted">Lance o placar de cada dupla e confirme para avançar.</div></div><span id="roundStatus" class="pill">Aguardando início</span></div>
+<div id="roundTabs" class="tabs"></div><div id="roundDescription" class="muted">Cadastre os jogadores e inicie o torneio.</div><div id="matches"></div><div class="notice">Pontuação: vitória = 3, empate = 1, derrota = 0. Desempate: pontos de classificação, saldo de pontos e total de pontos feitos. As duplas das rodadas 1 e 2 são aleatórias. Da rodada 3 em diante, cruzam-se os rankings (1º direita + 8º esquerda, 2º + 7º etc.). Os adversários são sorteados independentemente e o sistema tenta evitar repetições consecutivas.</div>
+<div class="buttons"><button id="nextBtn" class="primary" disabled>Confirmar resultados e gerar próxima rodada →</button></div><div id="nextMsg" class="muted" style="margin-top:8px">Registre todos os placares para continuar.</div></section>
+<section class="card"><div class="section-head"><div><h2>3. Classificação individual</h2><div class="muted">Ranking separado por lado, atualizado após cada placar.</div></div></div><div class="tabs"><button id="rankR" class="active">Direitas</button><button id="rankL">Esquerdas</button></div><div id="ranking" class="table-wrap muted">A classificação aparecerá após iniciar.</div></section>
+<section class="card"><h2>4. Quadras e cronograma</h2><div class="muted" style="margin:4px 0 14px">Dois jogos simultâneos por horário; duas janelas de 15 minutos por rodada.</div><div class="court-grid"><div class="court"><strong class="green">● Quadra Stone</strong><div class="muted">Identificação verde</div></div><div class="court cresol"><strong class="orange">● Quadra Cresol</strong><div class="muted">Identificação laranja</div></div></div><div id="schedule" style="margin-top:12px" class="muted">O cronograma aparecerá após o sorteio.</div><div class="notice">Cada rodada ocupa 30 minutos. Cinco rodadas somam 2h30 de jogos, dentro da janela das 14h às 18h, reservando tempo para organização, transições e premiação.</div><div class="buttons"><button id="exportBtn">Exportar resultados CSV</button></div><div id="exportMsg" class="muted" style="margin-top:8px"></div><div id="finish" class="notice hidden"><strong>🏆 Torneio concluído!</strong><br>Confira os três primeiros de cada lado na classificação final.</div></section>
+<footer>Impulse Padel BVB · Protótipo local · Exporte o CSV para guardar os resultados.</footer>
+</main>
+<script>
+(() => {
+const $=id=>document.getElementById(id);
+let players=[],rounds=[],current=0,rankSide='R',started=false;
+const namesOf=id=>$(id).value.split(/\\r?\\n/).map(s=>s.trim()).filter(Boolean);
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const player=id=>players.find(p=>p.id===id);
+const teamName=t=>t.map(id=>player(id).name).join(' + ');
+function stats(p){const s={pts:0,saldo:0,feitos:0,sofridos:0,v:0,e:0,d:0,jogos:0};for(const r of rounds)for(const m of r.matches){if(!m.a.includes(p.id)&&!m.b.includes(p.id))continue;if(m.sa===null||m.sb===null)continue;const own=m.a.includes(p.id)?m.sa:m.sb,opp=m.a.includes(p.id)?m.sb:m.sa;s.jogos++;s.feitos+=own;s.sofridos+=opp;if(own>opp){s.pts+=3;s.v++}else if(own===opp){s.pts++;s.e++}else s.d++}s.saldo=s.feitos-s.sofridos;return s}
+function sorted(side){return players.filter(p=>p.side===side).sort((a,b)=>{const x=stats(a),y=stats(b);return y.pts-x.pts||y.saldo-x.saldo||y.feitos-x.feitos||a.name.localeCompare(b.name,'pt-BR')})}
+function previousOpponents(){const set=new Set();if(!rounds.length)return set;for(const m of rounds[rounds.length-1].matches)for(const x of m.a)for(const y of m.b)set.add([x,y].sort().join('|'));return set}
+function hasRepeat(m,set){return m.a.some(x=>m.b.some(y=>set.has([x,y].sort().join('|'))))}
+function generateRound(n){
+ let R,L;if(n<=2){R=shuffle(players.filter(p=>p.side==='R'));L=shuffle(players.filter(p=>p.side==='L'))}else{R=sorted('R');L=sorted('L').reverse()}
+ const teams=Array.from({length:8},(_,i)=>[R[i].id,L[i].id]),prev=previousOpponents();let best=null,bestScore=Infinity;
+ for(let tries=0;tries<1000;tries++){const mix=shuffle(teams),matches=[];for(let i=0;i<8;i+=2)matches.push({a:mix[i],b:mix[i+1],sa:null,sb:null});const score=matches.reduce((sum,m)=>sum+(hasRepeat(m,prev)?1:0),0);if(score<bestScore){best=matches;bestScore=score}if(score===0)break}
+ rounds.push({n,matches:best,repeatAvoidance:bestScore===0});current=n-1;
+}
+function readSetup(){const r=namesOf('rightNames'),l=namesOf('leftNames');if(r.length!==8||l.length!==8){$('setupMsg').textContent='Informe exatamente 8 nomes em cada lado.';return false}if(new Set(r.concat(l).map(s=>s.toLocaleLowerCase('pt-BR'))).size!==16){$('setupMsg').textContent='Os 16 nomes precisam ser diferentes, inclusive entre os lados.';return false}players=r.map((name,i)=>({id:'R'+i,name,side:'R'})).concat(l.map((name,i)=>({id:'L'+i,name,side:'L'})));return true}
+function allDone(){return rounds.length===5&&rounds.every(r=>r.matches.every(m=>m.sa!==null&&m.sb!==null))}
+function fmt(min){return String(Math.floor(min/60)).padStart(2,'0')+':'+String(min%60).padStart(2,'0')}
+function render(){
+ $('statRound').textContent=rounds.length+'/5';$('statGames').textContent=(rounds.length*4)+'/20';$('statDone').textContent=rounds.reduce((n,r)=>n+r.matches.filter(m=>m.sa!==null&&m.sb!==null).length,0)+'/20';
+ $('roundStatus').textContent=!started?'Aguardando início':allDone()?'Torneio concluído':'Rodada '+(current+1)+' de 5';
+ $('roundTabs').innerHTML='';rounds.forEach((r,i)=>{const b=document.createElement('button');b.textContent='Rodada '+r.n;b.className=i===current?'active':'';b.onclick=()=>{current=i;render()};$('roundTabs').appendChild(b)});
+ if(!started){$('roundDescription').textContent='Cadastre os jogadores e inicie o torneio.';$('matches').innerHTML='';$('nextBtn').disabled=true}else{
+ const r=rounds[current];$('roundDescription').textContent=(r.n<=2?'Sorteio aleatório de duplas e confrontos.':'Duplas formadas pelo ranking anterior; confrontos sorteados.')+' Cada partida dura 15 minutos.';
+ $('matches').innerHTML='';r.matches.forEach((m,i)=>{const slot=i<2?0:1,start=14*60+(r.n-1)*30+slot*15,court=i%2===0?'Stone':'Cresol',cls=i%2===0?'green':'orange',box=document.createElement('div');box.className='match';box.innerHTML=`<div class="match-top"><span class="pill">Jogo ${i+1}</span><strong class="${cls}">${court}</strong><span class="muted">${fmt(start)}–${fmt(start+15)}</span></div><div class="versus"><div class="team">${escapeHTML(teamName(m.a))}</div><div class="scores"><input class="score" type="number" min="0" max="99" aria-label="Placar dupla A" value="${m.sa===null?'':m.sa}" data-match="${i}" data-team="a"><span class="muted">×</span><input class="score" type="number" min="0" max="99" aria-label="Placar dupla B" value="${m.sb===null?'':m.sb}" data-match="${i}" data-team="b"></div><div class="team">${escapeHTML(teamName(m.b))}</div></div>`;$('matches').appendChild(box)});
+ $('matches').querySelectorAll('input').forEach(inp=>inp.addEventListener('change',()=>{const m=rounds[current].matches[Number(inp.dataset.match)],v=inp.value.trim(),key=inp.dataset.team==='a'?'sa':'sb';m[key]=v!==''&&Number.isInteger(Number(v))&&Number(v)>=0&&Number(v)<=99?Number(v):null;render()}));
+ const done=r.matches.every(m=>m.sa!==null&&m.sb!==null);$('nextBtn').disabled=!done||r.n===5;$('nextBtn').textContent=r.n===5?'Última rodada registrada':'Confirmar resultados e gerar próxima rodada →';$('nextMsg').textContent=!done?'Preencha os dois placares de todos os jogos.':r.n===5?'Todos os resultados foram registrados.':'Resultados registrados. Você já pode gerar a próxima rodada.';
+ }
+ renderRanking();renderSchedule();$('finish').classList.toggle('hidden',!allDone());
+}
+function renderRanking(){if(!started){$('ranking').textContent='A classificação aparecerá após iniciar.';return}const list=sorted(rankSide);$('ranking').innerHTML=`<table><thead><tr><th>#</th><th>Jogador</th><th>J</th><th>V</th><th>E</th><th>D</th><th>Pts</th><th>Saldo</th><th>Feitos</th></tr></thead><tbody>${list.map((p,i)=>{const s=stats(p);return `<tr><td><strong>${i+1}</strong></td><td>${escapeHTML(p.name)}</td><td>${s.jogos}</td><td>${s.v}</td><td>${s.e}</td><td>${s.d}</td><td><strong>${s.pts}</strong></td><td>${s.saldo>0?'+':''}${s.saldo}</td><td>${s.feitos}</td></tr>`}).join('')}</tbody></table>`}
+function renderSchedule(){if(!started){$('schedule').textContent='O cronograma aparecerá após o sorteio.';return}$('schedule').innerHTML=rounds.map(r=>{const start=14*60+(r.n-1)*30,done=r.matches.filter(m=>m.sa!==null&&m.sb!==null).length;return `<div class="match"><strong>Rodada ${r.n} · ${fmt(start)}–${fmt(start+30)}</strong><div class="muted">${done}/4 jogos com placar registrado</div></div>`}).join('')}
+$('startBtn').onclick=()=>{if(started){$('setupMsg').textContent='O torneio já foi iniciado. Reinicie para começar novamente.';return}if(!readSetup())return;started=true;generateRound(1);$('setupMsg').textContent='Cadastro validado: 16 jogadores. Rodada 1 sorteada.';$('setupMsg').className='success';render()};
+$('resetBtn').onclick=()=>{if(started&&!confirm('Apagar todas as rodadas e resultados?'))return;players=[];rounds=[];current=0;started=false;$('setupMsg').textContent='Torneio reiniciado. Confira os nomes e inicie novamente.';$('setupMsg').className='muted';render()};
+$('nextBtn').onclick=()=>{if(!started||!rounds[current].matches.every(m=>m.sa!==null&&m.sb!==null))return;if(rounds.length<5){generateRound(rounds.length+1);render()}};
+$('rankR').onclick=()=>{rankSide='R';$('rankR').classList.add('active');$('rankL').classList.remove('active');renderRanking()};
+$('rankL').onclick=()=>{rankSide='L';$('rankL').classList.add('active');$('rankR').classList.remove('active');renderRanking()};
+$('exportBtn').onclick=()=>{if(!started){$('exportMsg').textContent='Inicie o torneio para exportar.';return}const rows=[['Rodada','Jogo','Quadra','Dupla A','Placar A','Placar B','Dupla B']];rounds.forEach(r=>r.matches.forEach((m,i)=>rows.push([r.n,i+1,i%2===0?'Stone':'Cresol',teamName(m.a),m.sa??'',m.sb??'',teamName(m.b)])));['Direitas','Esquerdas'].forEach((name,k)=>sorted(k===0?'R':'L').forEach((p,i)=>{const s=stats(p);rows.push([name+' classificação',i+1,p.name,s.jogos,s.pts,s.saldo,s.feitos])}));const csv=rows.map(row=>row.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(';')).join('\\r\\n');const blob=new Blob(['\\ufeff'+csv],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='impulse-padel-resultados.csv';a.click();URL.revokeObjectURL(url);$('exportMsg').textContent='CSV exportado.'};
+render();
+})();
+</script>
+</body></html>
